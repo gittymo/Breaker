@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Breaker" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Breaker" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="`sdl-config --cflags`" />
+				</Compiler>
+				<Linker>
+					<Add option="`sdl-config --libs`" />
+					<Add library="../../../../usr/lib/libSDL_ttf.a" />
+					<Add library="../../../../usr/lib/libfreetype.a" />
+					<Add library="../../../../usr/lib/libz.a" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Breaker" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-march=athlon64" />
+					<Add option="-fexpensive-optimizations" />
+					<Add option="-O3" />
+					<Add option="`sdl-config --cflags`" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="`sdl-config --libs`" />
+					<Add library="../../../../usr/lib/libSDL_ttf.a" />
+					<Add library="../../../../usr/lib/libfreetype.a" />
+					<Add library="../../../../usr/lib/libz.a" />
+				</Linker>
+			</Target>
+			<Target title="Release 32">
+				<Option output="Breaker" prefix_auto="1" extension_auto="1" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-march=i586" />
+					<Add option="-fexpensive-optimizations" />
+					<Add option="-O3" />
+				</Compiler>
+			</Target>
+			<Target title="Windows 32">
+				<Option output="Breaker.exe" prefix_auto="0" extension_auto="0" />
+				<Option type="0" />
+				<Option compiler="windows_cross_compiler" />
+				<Compiler>
+					<Add option="-march=i586" />
+					<Add option="-O2" />
+					<Add option="-W" />
+					<Add option="-Wall" />
+					<Add option="-D_GNU_SOURCE=1 -Dmain=SDL_main" />
+					<Add directory="../../sdlwin/include" />
+					<Add directory="../../sdlwin/include/SDL" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="../../sdlwin/include/SDL" />
+				</ResourceCompiler>
+				<Linker>
+					<Add option="-mwindows" />
+					<Add library="../../../../usr/i586-mingw32msvc/lib/libmingw32.a" />
+					<Add library="../../sdlwin/lib/libSDLmain.a" />
+					<Add library="../../sdlwin/lib/libSDL.dll.a" />
+					<Add library="../../sdlwin/lib/SDL_ttf.lib" />
+					<Add directory="../../sdlwin/lib" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="Brick.cpp" />
+		<Unit filename="brick.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="cb.bmp">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="main.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
